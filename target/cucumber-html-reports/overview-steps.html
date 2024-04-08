@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>GW-Cucumber</td>
+      <td>24 Jan 2024, 14:42</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.stepdefinition.HooksClass.afterScenario(io.cucumber.java.Scenario)</td>
+              <td>2</td>
+              <td class="duration" data-value="156868250">0.156</td>
+              <td class="duration" data-value="156868250">0.173</td>
+              <td class="duration" data-value="313736500">0.313</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.HooksClass.beforeScenario()</td>
+              <td>2</td>
+              <td class="duration" data-value="3089610850">3.089</td>
+              <td class="duration" data-value="3089610850">3.742</td>
+              <td class="duration" data-value="6179221700">6.179</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_click_company_in_create_new_account_dropdown()</td>
+              <td>1</td>
+              <td class="duration" data-value="175937000">0.175</td>
+              <td class="duration" data-value="175937000">0.175</td>
+              <td class="duration" data-value="175937000">0.175</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_click_new_account_in_actions_menu()</td>
+              <td>1</td>
+              <td class="duration" data-value="133434100">0.133</td>
+              <td class="duration" data-value="133434100">0.133</td>
+              <td class="duration" data-value="133434100">0.133</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_click_search_icon_in_organization_column()</td>
+              <td>1</td>
+              <td class="duration" data-value="81808400">0.081</td>
+              <td class="duration" data-value="81808400">0.081</td>
+              <td class="duration" data-value="81808400">0.081</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_enter_all_mandatory_fields_and_click_update(java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="4454758100">4.454</td>
+              <td class="duration" data-value="4454758100">4.454</td>
+              <td class="duration" data-value="4454758100">4.454</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_enter_and_click_search(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="102554400">0.102</td>
+              <td class="duration" data-value="102554400">0.102</td>
+              <td class="duration" data-value="102554400">0.102</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_enter_and_click_select_in_search_results(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="4220985600">4.220</td>
+              <td class="duration" data-value="4220985600">4.220</td>
+              <td class="duration" data-value="4220985600">4.220</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_enter_valid_credentials_and_click_login(java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="226189600">0.226</td>
+              <td class="duration" data-value="226189600">0.226</td>
+              <td class="duration" data-value="226189600">0.226</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_is_on_login_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="16328800">0.016</td>
+              <td class="duration" data-value="16328800">0.016</td>
+              <td class="duration" data-value="16328800">0.016</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_should_verify_in_account_summary_page_and_save_account_number(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3399686300">3.399</td>
+              <td class="duration" data-value="3399686300">3.399</td>
+              <td class="duration" data-value="3399686300">3.399</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_should_verify_in_applicant_information_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3033689400">3.033</td>
+              <td class="duration" data-value="3033689400">3.033</td>
+              <td class="duration" data-value="3033689400">3.033</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_should_verify_in_create_account_page(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="3060124600">3.060</td>
+              <td class="duration" data-value="3060124600">3.073</td>
+              <td class="duration" data-value="6120249200">6.120</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_should_verify_in_dashboard_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3049809600">3.049</td>
+              <td class="duration" data-value="3049809600">3.049</td>
+              <td class="duration" data-value="3049809600">3.049</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_should_view_in_applicant_information_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3051947300">3.051</td>
+              <td class="duration" data-value="3051947300">3.051</td>
+              <td class="duration" data-value="3051947300">3.051</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC01_AccountCreation.user_should_view_in_organizations_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3047739600">3.047</td>
+              <td class="duration" data-value="3047739600">3.047</td>
+              <td class="duration" data-value="3047739600">3.047</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_add_driver()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_create_vehicle()</td>
+              <td>1</td>
+              <td class="duration" data-value="96378000">0.096</td>
+              <td class="duration" data-value="96378000">0.096</td>
+              <td class="duration" data-value="96378000">0.096</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_issue_policy_in_bind_options_dropdown_and_click_ok()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_new_submission_in_actions_menu()</td>
+              <td>1</td>
+              <td class="duration" data-value="2173134600">2.173</td>
+              <td class="duration" data-value="2173134600">2.173</td>
+              <td class="duration" data-value="2173134600">2.173</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_new_submission_in_actions_menu_on_account_summary_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="260856600">0.260</td>
+              <td class="duration" data-value="260856600">0.260</td>
+              <td class="duration" data-value="260856600">0.260</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_next_in_covered_vehicles_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_next_in_drivers_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_next_in_location_details_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="92967200">0.092</td>
+              <td class="duration" data-value="92967200">0.092</td>
+              <td class="duration" data-value="92967200">0.092</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_next_in_modifiers_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_next_in_policy_info_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="102222800">0.102</td>
+              <td class="duration" data-value="102222800">0.102</td>
+              <td class="duration" data-value="102222800">0.102</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_next_in_qualification_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="69064600">0.069</td>
+              <td class="duration" data-value="69064600">0.069</td>
+              <td class="duration" data-value="69064600">0.069</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_next_in_risk_analysis_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="995000">0.000</td>
+              <td class="duration" data-value="995000">0.000</td>
+              <td class="duration" data-value="995000">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_next_in_state_info_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_next_in_vehicles_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="427400">0.000</td>
+              <td class="duration" data-value="427400">0.000</td>
+              <td class="duration" data-value="427400">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_ok_in_vehicle_information_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_quote_in_policy_review_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_search_in_class_column()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_click_view_your_policy_in_submission_bound_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_enter_mandatory_details(java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="27947400">0.027</td>
+              <td class="duration" data-value="27947400">0.027</td>
+              <td class="duration" data-value="27947400">0.027</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_enter_mandatory_details_and_click_ok(java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_enter_mandatory_details_in_commercial_auto_line_page_and_click_next(java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="6966788700">6.966</td>
+              <td class="duration" data-value="6966788700">6.966</td>
+              <td class="duration" data-value="6966788700">6.966</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_enter_organization_COmmon_ownership_type()</td>
+              <td>1</td>
+              <td class="duration" data-value="3217970400">3.217</td>
+              <td class="duration" data-value="3217970400">3.217</td>
+              <td class="duration" data-value="3217970400">3.217</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_is_on_dashboard_page_by_login_with_valid_credentials(java.util.Map&lt;java.lang.String, java.lang.String&gt;)</td>
+              <td>1</td>
+              <td class="duration" data-value="236167200">0.236</td>
+              <td class="duration" data-value="236167200">0.236</td>
+              <td class="duration" data-value="236167200">0.236</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_search_account_by_account_number_and_select_existing_account()</td>
+              <td>1</td>
+              <td class="duration" data-value="2261046600">2.261</td>
+              <td class="duration" data-value="2261046600">2.261</td>
+              <td class="duration" data-value="2261046600">2.261</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_select_commercial_auto_lob_in_lob_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="123448500">0.123</td>
+              <td class="duration" data-value="123448500">0.123</td>
+              <td class="duration" data-value="123448500">0.123</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_select_size_class_dropdown_click_search_and_select(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_select_standard_in_offering_selection_and_click_next()</td>
+              <td>1</td>
+              <td class="duration" data-value="2174012500">2.174</td>
+              <td class="duration" data-value="2174012500">2.174</td>
+              <td class="duration" data-value="2174012500">2.174</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_verify_and_save_policy_number(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_verify_in_commercial_auto_line_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3075427100">3.075</td>
+              <td class="duration" data-value="3075427100">3.075</td>
+              <td class="duration" data-value="3075427100">3.075</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_verify_in_lob_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3060007700">3.060</td>
+              <td class="duration" data-value="3060007700">3.060</td>
+              <td class="duration" data-value="3060007700">3.060</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_verify_in_qualification_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3057680700">3.057</td>
+              <td class="duration" data-value="3057680700">3.057</td>
+              <td class="duration" data-value="3057680700">3.057</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_verify_in_select_account_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3080214600">3.080</td>
+              <td class="duration" data-value="3080214600">3.080</td>
+              <td class="duration" data-value="3080214600">3.080</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_verify_in_vehicle_information_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_account_summary_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3063548700">3.063</td>
+              <td class="duration" data-value="3063548700">3.063</td>
+              <td class="duration" data-value="3063548700">3.063</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_covered_vehicles_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_driver_details_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_drivers_page(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_location_details_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3060413700">3.060</td>
+              <td class="duration" data-value="3060413700">3.060</td>
+              <td class="duration" data-value="3060413700">3.060</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_modifiers_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_offering_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3069504400">3.069</td>
+              <td class="duration" data-value="3069504400">3.069</td>
+              <td class="duration" data-value="3069504400">3.069</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_policy_info_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3061318400">3.061</td>
+              <td class="duration" data-value="3061318400">3.061</td>
+              <td class="duration" data-value="3061318400">3.061</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_policy_review_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_quote_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_risk_analysis_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_submission_bound_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_vcc_search_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1006300">0.001</td>
+              <td class="duration" data-value="1006300">0.001</td>
+              <td class="duration" data-value="1006300">0.001</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_should_view_in_vehicles_page(java.lang.String)</td>
+              <td>2</td>
+              <td class="duration" data-value="1529436250">1.529</td>
+              <td class="duration" data-value="1529436250">3.058</td>
+              <td class="duration" data-value="3058872500">3.058</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_veiw_in_state_info_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.stepdefinition.TC02_PolicyCreation.user_verify_in_vehicle_information_page(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="3058624700">3.058</td>
+              <td class="duration" data-value="3058624700">3.058</td>
+              <td class="duration" data-value="3058624700">3.058</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>65</td>
+            <td>70</td>
+            <td class="duration">1.229</td>
+            <td class="duration">6.966</td>
+            <td class="duration">1:26.058</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
